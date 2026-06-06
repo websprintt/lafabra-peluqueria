@@ -6,7 +6,6 @@
 import { motion } from 'motion/react';
 import { Sparkles, Calendar, Star, ArrowRight, CheckCircle2, ChevronRight, Phone, Flower } from 'lucide-react';
 import { handlePhoneCall } from '../utils';
-import heroImage from '../assets/images/lafabra_hero_1780675896853.png';
 
 interface HeroProps {
   onOpenBooking: () => void;
@@ -15,7 +14,7 @@ interface HeroProps {
 
 export default function Hero({ onOpenBooking, onNavigateToServices }: HeroProps) {
   // Path to the beautiful generated beauty hero image featuring nails and cherry blossoms
-  const heroImageSrc = heroImage;
+  const heroImageSrc = 'https://unsplash.com/es/fotos/una-mujer-sosteniendo-una-magdalena-con-glaseado-blanco-y-chispas-o0vurc_SiO0';
 
   return (
     <section 
