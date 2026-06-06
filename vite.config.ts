@@ -5,7 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: './', // Ensures relative assets load correctly on GitHub Pages
+    base: '/lafabra-peluqueria/', // Ensures relative assets load correctly on GitHub Pages
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
