@@ -35,7 +35,9 @@ jobs:
           cache: 'npm'
 
       - name: Instalar dependencias
-        run: npm ci
+        run: |
+          # Evitamos el bug de npm #4828 con dependencias nativas instalando de forma flexible
+          npm install
 
       - name: Compilar SPA de producción
         run: npm run build
