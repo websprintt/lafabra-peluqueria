@@ -36,7 +36,9 @@ jobs:
 
       - name: Instalar dependencias
         run: |
-          # Evitamos el bug de npm #4828 con dependencias nativas instalando de forma flexible
+          # Eliminar temporaria de package-lock.json para evitar que el lock de otra plataforma
+          # bloquee la descarga de las dependencias nativas correctas de Tailwind CSS v4 para Ubuntu Linux.
+          rm -f package-lock.json
           npm install
 
       - name: Compilar SPA de producción
