@@ -14,7 +14,7 @@ interface HeroProps {
 
 export default function Hero({ onOpenBooking, onNavigateToServices }: HeroProps) {
   // Path to the beautiful generated beauty hero image featuring nails and cherry blossoms
-  const heroImageSrc = '/src/assets/images/lafabra_hero_1780675896853.png';
+  const heroImageSrc = './src/assets/images/lafabra_hero_1780675896853.png';
 
   return (
     <section 
