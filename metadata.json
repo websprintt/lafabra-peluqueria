@@ -1,0 +1,8 @@
+{
+  "name": "Lafabra - Centro de Estética Premium",
+  "description": "Centro de estética avanzada y manicura de autor en Ciudad Real por Sandra. Tratamientos faciales, masajes, diseño de cejas y cuidado de la piel con atención personalizada premium.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
