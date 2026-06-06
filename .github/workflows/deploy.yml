@@ -4,15 +4,13 @@ name: Desplegar en GitHub Pages
 on:
   push:
     branches:
-      - main # Cambiar a master si la rama principal tiene ese nombre
+      - main
 
-# Establecer permisos necesarios para desplegar de forma segura en GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Permite cancelar compilaciones en curso de la misma rama para ahorrar recursos
 concurrency:
   group: 'pages'
   cancel-in-progress: true
@@ -30,16 +28,13 @@ jobs:
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
-          node-size: 18 # Funciona perfecto en Node 18+
-          node-version: 18
+          node-version: 20
           cache: 'npm'
 
       - name: Instalar dependencias
         run: |
-          # Eliminar temporaria de package-lock.json para evitar que el lock de otra plataforma
-          # bloquee la descarga de las dependencias nativas correctas de Tailwind CSS v4 para Ubuntu Linux.
           rm -f package-lock.json
-          npm install
+          npm install --include=optional
 
       - name: Compilar SPA de producción
         run: npm run build
@@ -50,7 +45,7 @@ jobs:
       - name: Subir artefacto estático de producción
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist' # Carpeta generada por la compilación de Vite
+          path: './dist'
 
       - name: Desplegar en GitHub Pages
         id: deployment
